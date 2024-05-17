@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Return Prediction</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Monthly Returns</h2>
+    <form action="/predict" method="post">
+        <label for="jan">January:</label>
+        <input type="text" name="jan" id="jan" required><br>
+
+        <label for="feb">February:</label>
+        <input type="text" name="feb" id="feb" required><br>
+
+        <label for="feb">March:</label>
+        <input type="text" name="mar" id="mar" required><br>
+
+        <label for="feb">April:</label>
+        <input type="text" name="apr" id="apr" required><br>
+
+        <label for="feb">May:</label>
+        <input type="text" name="may" id="may" required><br>
+
+        <label for="feb">June:</label>
+        <input type="text" name="jun" id="jun" required><br>
+
+        <label for="feb">July:</label>
+        <input type="text" name="jul" id="jul" required><br>
+
+        <label for="feb">August:</label>
+        <input type="text" name="aug" id="aug" required><br>
+
+        <label for="feb">September:</label>
+        <input type="text" name="sep" id="sep" required><br>
+
+        <label for="feb">October:</label>
+        <input type="text" name="oct" id="oct" required><br>
+
+        <label for="feb">November:</label>
+        <input type="text" name="nov" id="nov" required><br>
+
+        <label for="feb">December:</label>
+        <input type="text" name="dec" id="dec" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

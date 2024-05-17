@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .result-box {
+            padding: 20px;
+            border: 3px solid #fff;
+            border-radius: 10px;
+            background-color: #000;
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .predicted-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #4CAF50; /* Green color for the predicted value */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Predicted Annual Return</h2>
+        <p>The predicted annual return is: <span class="predicted-value">{{ annual_return }}</span></p>
+    </div>
+</body>
+</html>

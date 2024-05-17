@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Prediction Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #0f0;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #0f0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #222;
+            color: #0f0;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        input[type="submit"] {
+            background-color: #0f0;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff0;
+            color: #000;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .col {
+            flex: 1 1 auto;
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: #0f0;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0, 255, 0, 0.8);
+            }
+            50% {
+                border-color: #ff0;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 0, 0.8);
+            }
+            100% {
+                border-color: #0f0;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0, 255, 0, 0.8);
+            }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #0f0;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(0, 255, 0, 0.8);
+            animation: glow 2s infinite;
+        }
+        
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Model Prediction Form</h1>
+    <form action="/predict" method="post">
+        <label for="AREA">Area Name:</label><br>
+        <select id="AREA" name="AREA" class="form-select">
+            <option value="7">Wilshire</option>
+            <option value="1">Central</option>
+            <option value="3">Southwest</option>
+            <option value="9">Van Nuys</option>
+            <option value="6">Hollywood</option>
+            <option value="18">Southeast</option>
+            <option value="13">Newton</option>
+            <option value="19">Mission</option>
+            <option value="2">Rampart</option>
+            <option value="10">West Valley</option>
+            <option value="8">West LA</option>
+            <option value="20">Olympic</option>
+            <option value="4">Hollenbeck</option>
+            <option value="21">Topanga</option>
+            <option value="11">Northeast</option>
+            <option value="12">77th Street</option>
+            <option value="14">Pacific</option>
+            <option value="15">N Hollywood</option>
+            <option value="5">Harbor</option>
+            <option value="16">Foothill</option>
+            <option value="17">Devonshire</option>
+        </select><br>
+
+        <label for="Rpt_Dist_No">Rpt Dist No:</label><br>
+        <input type="text" id="Rpt_Dist_No" name="Rpt_Dist_No"><br>
+
+        <label for="LAT">LAT:</label><br>
+        <input type="text" id="LAT" name="LAT"><br>
+
+        <label for="LON">LON:</label><br>
+        <input type="text" id="LON" name="LON"><br>
+
+        <label for="day_rptd">Day Reported:</label><br>
+        <input type="text" id="day_rptd" name="day_rptd"><br>
+
+        <label for="month_rptd">Month Reported:</label><br>
+        <input type="text" id="month_rptd" name="month_rptd"><br>
+
+        <label for="year_rptd">Year Reported:</label><br>
+        <input type="text" id="year_rptd" name="year_rptd"><br>
+
+        <label for="day_occ">Day Occurred:</label><br>
+        <input type="text" id="day_occ" name="day_occ"><br>
+
+        <label for="month_occ">Month Occurred:</label><br>
+        <input type="text" id="month_occ" name="month_occ"><br>
+
+        <label for="year_occ">Year Occurred:</label><br>
+        <input type="text" id="year_occ" name="year_occ"><br>
+
+        <label for="hour">Hour:</label><br>
+        <input type="text" id="hour" name="hour"><br>
+
+        <label for="minute">Minute:</label><br>
+        <input type="text" id="minute" name="minute"><br>
+
+        <label for="occ_hour">Occurrence Hour:</label><br>
+        <input type="text" id="occ_hour" name="occ_hour"><br>
+
+        <label for="occ_minute">Occurrence Minute:</label><br>
+        <input type="text" id="occ_minute" name="occ_minute"><br>
+
+        <label for="vict_descent">Victim Descent:</label><br>
+        <select id="vict_descent" name="vict_descent" class="form-select">
+            <option value="0">Cambodian</option>
+            <option value="1">American Indian/Alaskan Native</option>
+            <option value="2">Asian Indian</option>
+            <option value="3">Black</option>
+            <option value="4">Chinese</option>
+            <option value="5">Filipino</option>
+            <option value="6">Guamanian</option>
+            <option value="7">Hawaiian</option>
+            <option value="8">Hispanic/Latin/Mexican</option>
+            <option value="9">Japanese</option>
+            <option value="10">Korean</option>
+            <option value="11">Laotian</option>
+            <option value="12">Other</option>
+            <option value="13">Other Asian</option>
+            <option value="14">Pacific Islander</option>
+            <option value="15">Samoan</option>
+            <option value="16">Unknown</option>
+            <option value="17">Vietnamese</option>
+            <option value="18">White</option>
+            <!-- Remaining options truncated for brevity -->
+        </select><br>
+
+        <label for="weapon">Weapon:</label><br>
+        <select id="weapon" name="weapon" class="form-select">
+            <option value="0">Not provided</option>
+            <option value="400">STRONG-ARM (HANDS, FIST, FEET OR BODILY FORCE)</option>
+            <option value="307">VEHICLE</option>
+            <option value="500">UNKNOWN WEAPON/OTHER WEAPON</option>
+            <option value="511">VERBAL THREAT</option>
+            <option value="301">BELT FLAILING INSTRUMENT/CHAIN</option>
+            <option value="102">HAND GUN</option>
+            <option value="106">UNKNOWN FIREARM</option>
+            <option value="200">KNIFE WITH BLADE 6INCHES OR LESS</option>
+            <option value="305">FIXED OBJECT</option>
+            <option value="205">KITCHEN KNIFE</option>
+            <option value="215">MACHETE</option>
+            <option value="223">UNKNOWN TYPE CUTTING INSTRUMENT</option>
+            <option value="512">MACE/PEPPER SPRAY</option>
+            <option value="304">CLUB/BAT</option>
+            <option value="308">STICK</option>
+            <option value="207">OTHER KNIFE</option>
+            <option value="515">PHYSICAL PRESENCE</option>
+            <option value="201">KNIFE WITH BLADE OVER 6 INCHES IN LENGTH</option>
+            <option value="311">HAMMER</option>
+            <option value="114">AIR PISTOL/REVOLVER/RIFLE/BB GUN</option>
+            <option value="109">SEMI-AUTOMATIC PISTOL</option>
+            <option value="113">SIMULATED GUN</option>
+            <option value="208">RAZOR</option>
+            <option value="107">OTHER FIREARM</option>
+            <option value="204">FOLDING KNIFE</option>
+            <option value="312">PIPE/METAL PIPE</option>
+            <option value="306">ROCK/THROWN OBJECT</option>
+            <option value="103">RIFLE</option>
+            <option value="218">OTHER CUTTING INSTRUMENT</option>
+            <option value="506">FIRE</option>
+            <option value="101">REVOLVER</option>
+            <option value="212">BOTTLE</option>
+            <option value="216">SCISSORS</option>
+            <option value="206">SWITCH BLADE</option>
+            <option value="303">BRASS KNUCKLES</option>
+            <option value="302">BLUNT INSTRUMENT</option>
+            <option value="309">BOARD</option>
+            <option value="513">STUN GUN</option>
+            <option value="213">CLEAVER</option>
+            <option value="210">RAZOR BLADE</option>
+            <option value="219">SCREWDRIVER</option>
+            <option value="104">SHOTGUN</option>
+            <option value="310">CONCRETE BLOCK/BRICK</option>
+            <option value="503">CAUSTIC CHEMICAL/POISON</option>
+            <option value="110">SEMI-AUTOMATIC RIFLE</option>
+            <option value="510">SCALDING LIQUID</option>
+            <option value="514">TIRE IRON</option>
+            <option value="202">BOWIE KNIFE</option>
+            <option value="221">GLASS</option>
+            <option value="211">AXE</option>
+            <option value="112">TOY GUN</option>
+            <option value="501">BOMB THREAT</option>
+            <option value="105">SAWED OFF RIFLE/SHOTGUN</option>
+            <option value="508">MARTIAL ARTS WEAPONS</option>
+            <option value="504">DEMAND NOTE</option>
+            <option value="203">DIRK/DAGGER</option>
+            <option value="115">ASSAULT WEAPON/UZI/AK47/ETC</option>
+            <option value="509">ROPE/LIGATURE</option>
+            <option value="122">HECKLER & KOCH 93 SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <option value="505">EXPLOXIVE DEVICE</option>
+            <option value="217">SWORD</option>
+            <option value="120">MAC-11 SEMIAUTOMATIC ASSAULT WEAPON</option>
+            <option value="220">SYRINGE</option>
+            <option value="502">BOW AND ARROW</option>
+            <option value="507">LIQUOR/DRUGS</option>
+            <option value="516">DOG/ANIMAL (SIC ANIMAL ON)</option>
+            <option value="300">BLACKJACK</option>
+            <option value="214">ICE PICK</option>
+            <option value="125">RELIC FIREARM</option>
+            <option value="108">AUTOMATIC WEAPON/SUB-MACHINE GUN</option>
+            <option value="116">ANTIQUE FIREARM</option>
+            <option value="121">HECKLER & KOCH 91 SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <option value="209">STRAIGHT RAZOR</option>
+            <option value="123">M1-1 SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <option value="111">STARTER PISTOL/REVOLVER</option>
+            <option value="118">UZI SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <option value="119">MAC-10 SEMIAUTOMATIC ASSAULT WEAPON</option>
+            <option value="117">UNK TYPE SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <option value="124">M-14 SEMIAUTOMATIC ASSAULT RIFLE</option>
+            <!-- Remaining options truncated for brevity -->
+        </select><br>
+
+        <label for="vict_sex">Victim Sex:</label><br>
+        <select id="vict_sex" name="vict_sex" class="form-select">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="0">Other</option>
+            <option value="3">Prefer not to say</option>
+        </select><br>
+
+        <label for="vict_age">Victim Age:</label><br>
+        <input type="text" id="vict_age" name="vict_age"><br>
+
+        <div style="text-align: center;">
+            <input type="submit" value="Predict" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+</body>
+</html>

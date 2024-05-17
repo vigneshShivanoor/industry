@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+ <style>
+    body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.result-box {
+    padding: 20px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background-color: #000;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+    animation: fadeIn 1s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#result {
+    padding: 20px;
+    margin-top: 20px;
+    border: 3px solid #4CAF50; /* Green border for the result box */
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Glowing effect for the result box */
+    animation: slideIn 1s ease-out; /* Slide in animation */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+p {
+    margin: 0;
+    font-size: 24px;
+}
+
+.predicted-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4CAF50; /* Green color for the predicted value */
+    text-shadow: 0 0 10px #4CAF50; /* Glowing effect for the predicted value */
+}
+
+.error {
+    color: #FF5722; /* Orange color for error message */
+    text-shadow: 0 0 10px #FF5722; /* Glowing effect for error message */
+}
+
+ </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2 style="text-align: center;">Classification</h2>
+        <div id="result" class="glow">
+            <!-- Predicted label will be printed here -->
+            {% if predicted_label %}
+                <p class="text-primary">Predicted Label: {{ predicted_label }}</p>
+            {% endif %}
+            <!-- Error message will be printed here -->
+            {% if error %}
+                <p class="error">Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

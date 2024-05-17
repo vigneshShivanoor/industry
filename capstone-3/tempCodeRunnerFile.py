@@ -1,0 +1,1 @@
+return director_details

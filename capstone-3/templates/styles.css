@@ -1,0 +1,37 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    border: none;
+}
+
+th, td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #0ff;
+}
+
+tr:hover {
+    animation: row-animate 0.3s ease forwards;
+}
+
+@keyframes row-animate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

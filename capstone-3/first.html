@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Login/Signup Pure CSS</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+<style>
+	
+  body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c4c3ca;
+  background: url('p3.jpg');
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1.upload-header {
+  text-align: center;
+  margin-top: 50px;
+  color: aqua;
+}
+
+.upload-box {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1f2029;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box h1 {
+  text-align: center;
+  color: aqua;
+  margin-bottom: 20px;
+}
+
+.upload-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-box input[type="file"] {
+  border: none;
+  outline: none;
+  background-color: #1f2029;
+  color: aqua;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.upload-box button[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: aqua;
+  color: #102770;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-box button[type="submit"]:hover {
+  background-color: #102770;
+}
+
+
+</style>
+</head>
+<body>
+
+
+    <h1 class="upload-header">Upload the Images To Predict the Stage</h1>
+    <div class="upload-box">
+        <h1>Upload Image</h1>
+        <form action="/predicting" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" class="form-control">
+            <button type="submit" class="btn btn-success"><i class="fas fa-upload me-2"></i>Upload</button>
+        </form>
+    </div>
+
+</body>
+</html>

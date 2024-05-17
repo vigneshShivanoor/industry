@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d7f1ee;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .upload-header {
+            text-align: center;
+            color: #333;
+            margin: 0 auto;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .upload-box {
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(76, 175, 80, 0.5);
+            transition: box-shadow 0.3s ease;
+            background-color: rgb(6, 6, 7);
+            z-index: 0;
+            position: relative;
+        }
+
+        .upload-box:hover {
+            box-shadow: 0px 0px 40px rgba(76, 175, 80, 0.8);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="upload-header">Upload the Images To Predict the Stage</h1>
+    <div class="upload-box">
+        <h1>Upload Image</h1>
+        <form action="/predicting" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" class="form-control">
+            <button type="submit" class="btn btn-success"><i class="fas fa-upload me-2"></i>Upload</button>
+        </form>
+    </div>
+</body>
+</html>
